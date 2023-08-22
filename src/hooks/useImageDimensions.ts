@@ -47,9 +47,8 @@ const useImageDimensions = (image: ImageSource): Dimensions | null => {
           resolve(imageDimensions);
         } else {
           // @ts-ignore
-          Image.getSizeWithHeaders(
+          Image.getSize(
             source.uri,
-            source.headers,
             (width: number, height: number) => {
               imageDimensionsCache.set(cacheKey, { width, height });
               resolve({ width, height });
